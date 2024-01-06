@@ -127,7 +127,6 @@ function fenToObj(fen: string): BoardPosition {
       if (row[j].search(/[0-9]/) !== -1) {
 
         const numEmptySquares = parseInt(row[j], 10);
-        console.log(numEmptySquares);
         colIdx = colIdx + numEmptySquares;
       } else {
         // piece
