@@ -19,7 +19,7 @@ export function getRelativeCoords(
   x: number;
   y: number;
 } {
-  const squareWidth = boardWidth / 8;
+  const squareWidth = boardWidth / 10;
   const columns =
     boardOrientation === "white" ? WHITE_COLUMN_VALUES : BLACK_COLUMN_VALUES;
   const rows = boardOrientation === "white" ? WHITE_ROWS : BLACK_ROWS;
@@ -110,23 +110,26 @@ export function convertPositionToObject(
  * Converts a fen string to a position object.
  */
 function fenToObj(fen: string): BoardPosition {
-  if (!isValidFen(fen)) return {};
+  if (!isValidShteiFen(fen)) return {};
 
   // cut off any move, castling, etc info from the end. we're only interested in position information
   fen = fen.replace(/ .+$/, "");
   const rows = fen.split("/");
   const position: BoardPosition = {};
-  let currentRow = 8;
+  let currentRow = 10;
 
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 10; i++) {
     const row = rows[i].split("");
     let colIdx = 0;
 
     // loop through each character in the FEN section
     for (let j = 0; j < row.length; j++) {
+      console.log(row[j].search(/[0-9]/) );
       // number / empty squares
-      if (row[j].search(/[1-8]/) !== -1) {
+      if (row[j].search(/[0-9]/) !== -1) {
+
         const numEmptySquares = parseInt(row[j], 10);
+        console.log(numEmptySquares);
         colIdx = colIdx + numEmptySquares;
       } else {
         // piece
@@ -141,22 +144,22 @@ function fenToObj(fen: string): BoardPosition {
 }
 
 /**
- * Returns whether string is valid fen notation.
+ * Returns whether string is valid shtei fen notation.
  */
-function isValidFen(fen: string): boolean {
+function isValidShteiFen(fen: string): boolean {
   // cut off any move, castling, etc info from the end. we're only interested in position information
   fen = fen.replace(/ .+$/, "");
 
   // expand the empty square numbers to just 1s
   fen = expandFenEmptySquares(fen);
 
-  // fen should be 8 sections separated by slashes
+  // fen should be 10 sections separated by slashes
   const chunks = fen.split("/");
-  if (chunks.length !== 8) return false;
+  if (chunks.length !== 10) return false;
 
   // check each section
-  for (let i = 0; i < 8; i++) {
-    if (chunks[i].length !== 8 || chunks[i].search(/[^kqrnbpKQRNBP1]/) !== -1) {
+  for (let i = 0; i < 10; i++) {
+    if (chunks[i].length !== 10 || chunks[i].search(/[^kqrnmbpKQRNBMP1]/) !== -1) {
       return false;
     }
   }
@@ -164,11 +167,14 @@ function isValidFen(fen: string): boolean {
   return true;
 }
 
+
 /**
  * Expand out fen notation to countable characters for validation
  */
 function expandFenEmptySquares(fen: string): string {
   return fen
+    .replace(/10/g, "1111111111")
+    .replace(/9/g, "111111111")
     .replace(/8/g, "11111111")
     .replace(/7/g, "1111111")
     .replace(/6/g, "111111")

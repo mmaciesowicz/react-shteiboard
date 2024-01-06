@@ -11,12 +11,13 @@ export function PromotionDialog() {
     promoteToSquare,
   } = useChessboard();
 
-  const promotePieceColor = promoteToSquare?.[1] === "1" ? "b" : "w";
+  const promotePieceColor = promoteToSquare?.slice(1,3) === "1" ? "b" : "w";
   const promotionOptions: PromotionPieceOption[] = [
     `${promotePieceColor ?? "w"}Q`,
     `${promotePieceColor ?? "w"}R`,
     `${promotePieceColor ?? "w"}N`,
     `${promotePieceColor ?? "w"}B`,
+    `${promotePieceColor ?? "w"}M`,
   ];
 
   const dialogStyles = {
@@ -32,7 +33,7 @@ export function PromotionDialog() {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      transform: `translate(0px, ${(3 * boardWidth) / 8}px)`,
+      transform: `translate(0px, ${(3 * boardWidth) / 10}px)`,
       width: "100%",
       height: `${boardWidth / 4}px`,
       top: 0,
@@ -44,9 +45,9 @@ export function PromotionDialog() {
   const dialogCoords = getRelativeCoords(
     boardOrientation,
     boardWidth,
-    promoteToSquare || "a8"
+    promoteToSquare || "a10"
   );
-
+  console.log(getRelativeCoords);
   return (
     <div
       style={{

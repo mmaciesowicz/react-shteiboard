@@ -122,7 +122,7 @@ export function Piece({
       const sourceSq = square;
       const targetSq = newSquare[0];
       if (sourceSq && targetSq) {
-        const squareWidth = boardWidth / 8;
+        const squareWidth = boardWidth / 10;
         setPieceStyle((oldPieceStyle) => ({
           ...oldPieceStyle,
           transform: `translate(${
@@ -177,15 +177,15 @@ export function Piece({
     >
       {typeof chessPieces[piece] === "function" ? (
         (chessPieces[piece] as CustomPieceFn)({
-          squareWidth: boardWidth / 8,
+          squareWidth: boardWidth / 10,
           isDragging,
           square,
         })
       ) : (
         <svg
           viewBox={"1 1 43 43"}
-          width={boardWidth / 8}
-          height={boardWidth / 8}
+          width={boardWidth / 10}
+          height={boardWidth / 10}
         >
           <g>{chessPieces[piece] as ReactNode}</g>
         </svg>

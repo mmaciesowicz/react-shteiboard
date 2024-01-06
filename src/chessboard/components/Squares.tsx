@@ -20,7 +20,7 @@ export function Squares() {
 
   return (
     <div data-boardid={id}>
-      {[...Array(8)].map((_, r) => {
+      {[...Array(10)].map((_, r) => {
         return (
           <div
             key={r.toString()}
@@ -30,12 +30,12 @@ export function Squares() {
               width: boardWidth,
             }}
           >
-            {[...Array(8)].map((_, c) => {
+            {[...Array(10)].map((_, c) => {
               const square =
                 boardOrientation === "black"
-                  ? ((COLUMNS[7 - c] + (r + 1)) as Sq)
-                  : ((COLUMNS[c] + (8 - r)) as Sq);
-              const squareColor = c % 2 === r % 2 ? "white" : "black";
+                  ? ((COLUMNS[9 - c] + (r + 1)) as Sq)
+                  : ((COLUMNS[c] + (10 - r)) as Sq);
+              const squareColor = c % 2 === r % 2 ? "black" : "white";
               const squareHasPremove = premoves.find(
                 (p) => p.sourceSq === square || p.targetSq === square
               );

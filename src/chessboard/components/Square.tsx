@@ -194,8 +194,8 @@ const center = {
 };
 
 const size = (width: number) => ({
-  width: width / 8,
-  height: width / 8,
+  width: width / 10,
+  height: width / 10,
 });
 
 const borderRadius = (
@@ -210,17 +210,17 @@ const borderRadius = (
       ? { borderBottomLeftRadius: customBoardStyle.borderRadius }
       : { borderTopRightRadius: customBoardStyle.borderRadius };
   }
-  if (square === "a8") {
+  if (square === "a10") {
     return boardOrientation === "white"
       ? { borderTopLeftRadius: customBoardStyle.borderRadius }
       : { borderBottomRightRadius: customBoardStyle.borderRadius };
   }
-  if (square === "h1") {
+  if (square === "j1") {
     return boardOrientation === "white"
       ? { borderBottomRightRadius: customBoardStyle.borderRadius }
       : { borderTopLeftRadius: customBoardStyle.borderRadius };
   }
-  if (square === "h8") {
+  if (square === "j10") {
     return boardOrientation === "white"
       ? { borderTopRightRadius: customBoardStyle.borderRadius }
       : { borderBottomLeftRadius: customBoardStyle.borderRadius };

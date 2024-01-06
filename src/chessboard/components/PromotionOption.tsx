@@ -36,6 +36,10 @@ export function PromotionOption({ option }: Props) {
         return promotionDialogVariant === "default"
           ? customDarkSquareStyle.backgroundColor
           : customLightSquareStyle.backgroundColor;
+      case "M":
+        return promotionDialogVariant === "default"
+          ? customDarkSquareStyle.backgroundColor
+          : customLightSquareStyle.backgroundColor;
     }
   };
 
@@ -69,15 +73,15 @@ export function PromotionOption({ option }: Props) {
           }}
         >
           {(chessPieces[option] as CustomPieceFn)({
-            squareWidth: boardWidth / 8,
+            squareWidth: boardWidth / 10,
             isDragging: false,
           })}
         </div>
       ) : (
         <svg
           viewBox={"1 1 43 43"}
-          width={boardWidth / 8}
-          height={boardWidth / 8}
+          width={boardWidth /10}
+          height={boardWidth / 10}
           style={{
             transition: "all 0.1s ease-out",
             transform: isHover ? "scale(1)" : "scale(0.85)",

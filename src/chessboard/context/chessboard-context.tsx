@@ -145,11 +145,12 @@ export const ChessboardProvider = forwardRef(
       onPieceDragBegin = () => {},
       onPieceDragEnd = () => {},
       onPieceDrop = () => true,
-      onPromotionCheck = (sourceSquare, targetSquare, piece) => {
+      onPromotionCheck = (sourceSquare, targetSquare, piece) => {       
         return (
           ((piece === "wP" &&
-            sourceSquare[1] === "7" &&
-            targetSquare[1] === "8") ||
+            sourceSquare[1] === "9" &&
+            // targetSquare[1] === "10") ||
+            targetSquare.slice(1,3) === "10") ||
             (piece === "bP" &&
               sourceSquare[1] === "2" &&
               targetSquare[1] === "1")) &&

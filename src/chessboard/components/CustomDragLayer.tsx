@@ -36,7 +36,7 @@ export function CustomDragLayer({ boardContainer }: CustomDragLayerProps) {
       if (!clientOffset || !sourceClientOffset) return { display: "none" };
 
       let { x, y } = snapToCursor ? clientOffset : sourceClientOffset;
-      const halfSquareWidth = boardWidth / 8 / 2;
+      const halfSquareWidth = boardWidth / 10 / 2;
       if (snapToCursor) {
         x -= halfSquareWidth;
         y -= halfSquareWidth;
@@ -77,14 +77,14 @@ export function CustomDragLayer({ boardContainer }: CustomDragLayerProps) {
       <div style={getItemStyle(clientOffset, sourceClientOffset)}>
         {typeof chessPieces[item.piece] === "function" ? (
           (chessPieces[item.piece] as CustomPieceFn)({
-            squareWidth: boardWidth / 8,
+            squareWidth: boardWidth / 10,
             isDragging: true,
           })
         ) : (
           <svg
             viewBox={"1 1 43 43"}
-            width={boardWidth / 8}
-            height={boardWidth / 8}
+            width={boardWidth / 10}
+            height={boardWidth / 10}
           >
             <g>{chessPieces[item.piece] as ReactNode}</g>
           </svg>

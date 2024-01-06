@@ -3,6 +3,8 @@ import { ReactNode } from "react";
 // By en:User:Cburnett - Own work
 // This W3C - unspecified vector image was created with Inkscape., CC BY - SA 3.0, https://commons.wikimedia.org/w/index.php?curid=1499810
 
+// or we can use react SVGR https://react-svgr.com/playground/ to convert
+
 export const defaultPieces: Record<string, ReactNode> = {
   wP: (
     <svg
@@ -28,6 +30,55 @@ export const defaultPieces: Record<string, ReactNode> = {
         }}
       />
     </svg>
+  ),
+  wM: (
+    <svg xmlns="http://www.w3.org/2000/svg" width={45} height={45} x="17.5%" y="14%">
+    <defs>
+      <style>
+        {
+          ".wM-1,.wM-4{fill:#fff}.wM-1,.wM-2,.wM-4{stroke:#000;stroke-linecap:round;stroke-width:1.5px;stroke-linejoin:round}.wM-4{fill-rule:evenodd}"
+        }
+      </style>
+    </defs>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path
+          d="M27.08 32.82a79 79 0 0 0-12.3-.89 79 79 0 0 0-12.3.89A11.1 11.1 0 0 1 2.45 21c.44-.65 3.57 3.47 5.45 3.58L6.19 7.11a1.9 1.9 0 0 0 1-.31l4.34 5.12L14.78 5l3.25 7 4.34-5.2a1.9 1.9 0 0 0 1 .3l-1.71 17.45c1.88-.11 5-4.23 5.45-3.58a11.1 11.1 0 0 1-.03 11.85Z"
+          className="wM-1"
+        />
+        <path
+          d="M6.19 7.11h0v-.35a2 2 0 0 0 .71-.33l.32.38a1.9 1.9 0 0 1-1.03.3Z"
+          className="wM-2"
+        />
+        <path
+          d="M12.28 16.78h5"
+          style={{
+            fill: "none",
+            stroke: "#000",
+            strokeLinecap: "round",
+            strokeWidth: "1.5px",
+          }}
+        />
+        <path
+          d="M8.15 5.13a2 2 0 0 1-1 1.67 1.9 1.9 0 0 1-1 .31h-.02a2 2 0 1 1 2-2Z"
+          className="wM-4"
+        />
+        <ellipse cx={14.78} cy={2.74} className="wM-1" rx={2} ry={1.99} />
+        <path
+          d="M23.4 6.75v.35a1.9 1.9 0 0 1-1-.3l.32-.38a2 2 0 0 0 .68.33ZM12.27 16.78h5"
+          className="wM-2"
+        />
+        <path
+          d="M25.41 5.1a2 2 0 0 1-2 2h-.05a1.9 1.9 0 0 1-1-.3 2 2 0 0 1-1-1.67 2 2 0 0 1 4 0Z"
+          className="wM-4"
+        />
+        <path
+          d="M4.06 28.45a73.87 73.87 0 0 1 21 0M14.77 29.38v-16.8"
+          className="wM-2"
+        />
+      </g>
+    </g>
+  </svg>
   ),
   wR: (
     <svg
@@ -265,6 +316,62 @@ export const defaultPieces: Record<string, ReactNode> = {
         }}
       />
     </svg>
+  ),
+  bM: (
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={45}
+    height={45}
+    x="17.5%"
+    y="14%"
+  >
+    <defs>
+      <style>
+        {
+          ".bM-1,.bM-3{stroke:#000}.bM-1,.bM-3,.bM-4{stroke-linecap:round;stroke-width:1.5px;stroke-linejoin:round}.bM-3{fill-rule:evenodd}.bM-4{fill:#fff;stroke:#fff}"
+        }
+      </style>
+    </defs>
+    <g id="bM-1" data-name="bM-1">
+      <g id="bM-Layer_1-2" data-name="bM-Layer 1">
+        <path
+          d="M27.08 32.82a79 79 0 0 0-12.3-.89 79 79 0 0 0-12.3.89A11.1 11.1 0 0 1 2.45 21c.44-.65 3.57 3.47 5.45 3.58L6.19 7.11a1.9 1.9 0 0 0 1-.31l4.34 5.12L14.78 5l3.25 7 4.34-5.2a1.9 1.9 0 0 0 1 .3l-1.71 17.45c1.88-.11 5-4.23 5.45-3.58a11.1 11.1 0 0 1-.03 11.85Z"
+          className="bM-1"
+        />
+        <path
+          d="M6.19 7.11h0v-.35a2 2 0 0 0 .71-.33l.32.38a1.9 1.9 0 0 1-1.03.3Z"
+          className="bM-1"
+        />
+        <path
+          d="M12.28 16.78h5"
+          style={{
+            fill: "none",
+            strokeLinecap: "round",
+            strokeWidth: "1.5px",
+            stroke: "#000",
+          }}
+        />
+        <path
+          d="M8.15 5.13a2 2 0 0 1-1 1.67 1.9 1.9 0 0 1-1 .31h-.02a2 2 0 1 1 2-2Z"
+          className="bM-3"
+        />
+        <ellipse cx={14.78} cy={2.74} className="bM-1" rx={2} ry={1.99} />
+        <path
+          d="M23.4 6.75v.35a1.9 1.9 0 0 1-1-.3l.32-.38a2 2 0 0 0 .68.33Z"
+          className="bM-1"
+        />
+        <path d="M12.27 16.78h5" className="bM-4" />
+        <path
+          d="M25.41 5.1a2 2 0 0 1-2 2h-.05a1.9 1.9 0 0 1-1-.3 2 2 0 0 1-1-1.67 2 2 0 0 1 4 0Z"
+          className="bM-3"
+        />
+        <path
+          d="M4.06 28.45a73.87 73.87 0 0 1 21 0M14.77 29.38v-16.8"
+          className="bM-4"
+        />
+      </g>
+    </g>
+  </svg> 
   ),
   bR: (
     <svg

@@ -18,15 +18,15 @@ export function Notation({ row, col }: NotationProps) {
   const blackColor = customDarkSquareStyle.backgroundColor;
 
   const isRow = col === 0;
-  const isColumn = row === 7;
+  const isColumn = row === 9;
   const isBottomLeftSquare = isRow && isColumn;
 
   function getRow() {
-    return boardOrientation === "white" ? 8 - row : row + 1;
+    return boardOrientation === "white" ? 10 - row : row + 1;
   }
 
   function getColumn() {
-    return boardOrientation === "black" ? COLUMNS[7 - col] : COLUMNS[col];
+    return boardOrientation === "black" ? COLUMNS[9 - col] : COLUMNS[col];
   }
 
   function renderBottomLeft() {
@@ -36,7 +36,7 @@ export function Notation({ row, col }: NotationProps) {
           style={{
             zIndex: 3,
             position: "absolute",
-            ...{ color: whiteColor },
+            ...{ color: blackColor },
             ...numericStyle(boardWidth),
           }}
         >
@@ -46,7 +46,7 @@ export function Notation({ row, col }: NotationProps) {
           style={{
             zIndex: 3,
             position: "absolute",
-            ...{ color: whiteColor },
+            ...{ color: blackColor },
             ...alphaStyle(boardWidth),
           }}
         >
@@ -63,7 +63,7 @@ export function Notation({ row, col }: NotationProps) {
           userSelect: "none",
           zIndex: 3,
           position: "absolute",
-          ...{ color: col % 2 !== 0 ? blackColor : whiteColor },
+          ...{ color: col % 2 !== 0 ? whiteColor : blackColor },
           ...alphaStyle(boardWidth),
         }}
       >
@@ -80,8 +80,8 @@ export function Notation({ row, col }: NotationProps) {
           zIndex: 3,
           position: "absolute",
           ...(boardOrientation === "black"
-            ? { color: row % 2 === 0 ? blackColor : whiteColor }
-            : { color: row % 2 === 0 ? blackColor : whiteColor }),
+            ? { color: row % 2 === 0 ? whiteColor : blackColor }
+            : { color: row % 2 === 0 ? whiteColor : blackColor }),
           ...numericStyle(boardWidth),
         }}
       >
@@ -107,12 +107,12 @@ export function Notation({ row, col }: NotationProps) {
 
 const alphaStyle = (width: number) => ({
   alignSelf: "flex-end",
-  paddingLeft: width / 8 - width / 48,
+  paddingLeft: width / 10 - width / 48,
   fontSize: width / 48,
 });
 
 const numericStyle = (width: number) => ({
   alignSelf: "flex-start",
-  paddingRight: width / 8 - width / 48,
+  paddingRight: width / 10 - width / 48,
   fontSize: width / 48,
 });
