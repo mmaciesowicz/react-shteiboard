@@ -111,7 +111,6 @@ export function convertPositionToObject(
  */
 function fenToObj(fen: string): BoardPosition {
   if (!isValidShteiFen(fen)) return {};
-
   // cut off any move, castling, etc info from the end. we're only interested in position information
   fen = fen.replace(/ .+$/, "");
   const rows = fen.split("/");
@@ -124,7 +123,6 @@ function fenToObj(fen: string): BoardPosition {
 
     // loop through each character in the FEN section
     for (let j = 0; j < row.length; j++) {
-      console.log(row[j].search(/[0-9]/) );
       // number / empty squares
       if (row[j].search(/[0-9]/) !== -1) {
 
