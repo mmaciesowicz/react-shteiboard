@@ -71,9 +71,9 @@ export const BLACK_COLUMN_VALUES: { [col in string]: number } = {
   j: 0,
 };
 
-// export const WHITE_ROWS = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-// export const BLACK_ROWS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-export const WHITE_ROWS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+export const WHITE_ROWS = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
 export const BLACK_ROWS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// export const WHITE_ROWS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+// export const BLACK_ROWS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 

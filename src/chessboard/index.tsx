@@ -77,22 +77,11 @@ export const Chessboard = forwardRef<ClearPremoves, ChessboardProps>(
 
     return backendSet && clientWindow ? (
       <ErrorBoundary>
-        {/* <div className="window-container"
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            margin: "0",
-            padding: "0",
-          }}
-        > */}
           <div
             ref={boardContainerRef}
             style={{
               display: "flex",
               flexDirection: "column",
-              // width: "100%",
               width: "100vmin",
             }}
           >
@@ -113,9 +102,7 @@ export const Chessboard = forwardRef<ClearPremoves, ChessboardProps>(
                 </ChessboardProvider>
               )}
             </DndProvider>
-          </div>
-        {/* </div> */}
-        
+          </div>       
       </ErrorBoundary>
     ) : null;
   }
