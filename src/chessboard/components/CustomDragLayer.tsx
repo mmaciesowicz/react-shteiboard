@@ -52,7 +52,6 @@ export function CustomDragLayer({ boardContainer }: CustomDragLayerProps) {
         x = Math.max(maxLeft, Math.min(x, maxRight));
         y = Math.max(maxTop, Math.min(y, maxBottom));
       }
-
       const transform = `translate(${x}px, ${y}px)`;
 
       return {

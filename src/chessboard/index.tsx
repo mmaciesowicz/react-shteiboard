@@ -77,32 +77,45 @@ export const Chessboard = forwardRef<ClearPremoves, ChessboardProps>(
 
     return backendSet && clientWindow ? (
       <ErrorBoundary>
-        <div
-          ref={boardContainerRef}
+        {/* <div className="window-container"
           style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
+            position: "absolute",
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            margin: "0",
+            padding: "0",
           }}
-        >
-          <div ref={boardRef} style={{ width: "100%" }} />
-          <DndProvider
-            backend={backend}
-            context={clientWindow}
-            options={customDndBackend ? customDndBackendOptions : undefined}
+        > */}
+          <div
+            ref={boardContainerRef}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              // width: "100%",
+              width: "100vmin",
+            }}
           >
-            {boardWidth && (
-              <ChessboardProvider
-                boardWidth={boardWidth}
-                {...otherProps}
-                ref={ref}
-              >
-                <CustomDragLayer boardContainer={boardContainerPos} />
-                <Board />
-              </ChessboardProvider>
-            )}
-          </DndProvider>
-        </div>
+            <div ref={boardRef} style={{ width: "100%" }} />
+            <DndProvider
+              backend={backend}
+              context={clientWindow}
+              options={customDndBackend ? customDndBackendOptions : undefined}
+            >
+              {boardWidth && (
+                <ChessboardProvider
+                  boardWidth={boardWidth}
+                  {...otherProps}
+                  ref={ref}
+                >
+                  <CustomDragLayer boardContainer={boardContainerPos} />
+                  <Board />
+                </ChessboardProvider>
+              )}
+            </DndProvider>
+          </div>
+        {/* </div> */}
+        
       </ErrorBoundary>
     ) : null;
   }
