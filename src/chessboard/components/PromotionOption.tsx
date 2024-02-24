@@ -47,7 +47,7 @@ export function PromotionOption({ option }: Props) {
     <div
       onClick={() => {
         onPromotionPieceSelect?.length
-          ? onPromotionPieceSelect(option)
+          ? onPromotionPieceSelect(promoteFromSquare ? promoteFromSquare : undefined, promoteToSquare ? promoteToSquare : undefined, option)
           : handleSetPosition(
               promoteFromSquare!,
               promoteToSquare!,
