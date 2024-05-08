@@ -19,13 +19,15 @@ export function getRelativeCoords(
   x: number;
   y: number;
 } {
+  console.log("Square getrelativecoords",square)
   const squareWidth = boardWidth / 10;
   const columns =
     boardOrientation === "white" ? WHITE_COLUMN_VALUES : BLACK_COLUMN_VALUES;
   const rows = boardOrientation === "white" ? WHITE_ROWS : BLACK_ROWS;
 
   const x = columns[square[0]] * squareWidth + squareWidth / 2;
-  const y = rows[parseInt(square[1], 10) - 1] * squareWidth + squareWidth / 2;
+  // const y = rows[parseInt(square[1], 10) - 1] * squareWidth + squareWidth / 2;
+  const y = rows[parseInt(square.slice(1,3), 10) - 1] * squareWidth + squareWidth / 2;
   return { x, y };
 }
 
