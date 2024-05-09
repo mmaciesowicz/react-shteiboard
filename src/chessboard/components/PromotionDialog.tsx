@@ -28,8 +28,31 @@ export function PromotionDialog() {
 
   let defaultTransform = `translate(${-boardWidth / 10}px, 0)`; // if (boardOrientation === "white" && promotePieceColor === "w" || boardOrientation === "black" && promotePieceColor === "b")
   
-
-  if (boardOrientation === "white" && promotePieceColor === "b") {
+  // top left corner
+  if ((boardOrientation === "white" && promoteToSquare === "a10") || (boardOrientation === "black" && promoteToSquare === "j1")) {
+    defaultTransform = `translate(${-boardWidth / 20}px, ${-boardWidth/100}px)`;
+  }
+  // top right corner
+  else if ((boardOrientation === "white" && promoteToSquare === "j10") || (boardOrientation === "black" && promoteToSquare === "a1")) {
+    defaultTransform = `translate(${-1.5*boardWidth / 10}px, ${-boardWidth/100}px)`;
+  }
+   // bottom left corner (white)
+  else if (boardOrientation === "white" && promoteToSquare === "a1") {
+    defaultTransform = `translate(${-boardWidth / 20}px, ${-3*boardWidth/10}px)`;
+  }
+  // bottom left corner (black)
+  else if (boardOrientation === "black" && promoteToSquare === "j10") {
+    defaultTransform = `translate(${-boardWidth / 20}px, ${-boardWidth/100}px)`;
+  }
+  // bottom right corner (white)
+  else if ((boardOrientation === "white" && promoteToSquare === "j1")) {
+    defaultTransform = `translate(${-1.5*boardWidth / 10}px, ${-3*boardWidth/10}px)`;
+  }
+  // bottom right corner (black)
+  else if (boardOrientation === "black" && promoteToSquare === "a10") {
+    defaultTransform = `translate(${-1.5*boardWidth / 10}px, ${-boardWidth/100}px)`;
+  }
+  else if (boardOrientation === "white" && promotePieceColor === "b") {
     defaultTransform = `translate(${-boardWidth / 10}px, ${-3*boardWidth / 10}px)`;
   }
 
