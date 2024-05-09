@@ -19,7 +19,6 @@ export function getRelativeCoords(
   x: number;
   y: number;
 } {
-  console.log("Square getrelativecoords",square)
   const squareWidth = boardWidth / 10;
   const columns =
     boardOrientation === "white" ? WHITE_COLUMN_VALUES : BLACK_COLUMN_VALUES;
