@@ -24,7 +24,7 @@ export function PromotionOption({ option }: Props) {
 
   const backgroundColor = () => {
     switch (option[1]) {
-      case "Q":
+      case "G":
         return customDarkSquareStyle.backgroundColor;
       case "R":
         return customLightSquareStyle.backgroundColor;

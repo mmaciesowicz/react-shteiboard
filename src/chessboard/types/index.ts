@@ -109,6 +109,7 @@ export type Piece =
   | "wN"
   | "wR"
   | "wM"
+  | "wG"
   | "wQ"
   | "wK"
   | "bP"
@@ -116,18 +117,19 @@ export type Piece =
   | "bN"
   | "bR"
   | "bM"
+  | "bG"
   | "bQ"
   | "bK";
 
 export type BoardPosition = { [square in Square]?: Piece };
 
 export type PromotionPieceOption =
-  | "wQ"
+  | "wG"
   | "wM"
   | "wR"
   | "wN"
   | "wB"
-  | "bQ"
+  | "bG"
   | "bM"
   | "bR"
   | "bN"

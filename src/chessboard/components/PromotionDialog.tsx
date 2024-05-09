@@ -13,7 +13,7 @@ export function PromotionDialog() {
 
   const promotePieceColor = promoteToSquare?.slice(1,3) === "1" ? "b" : "w";
   const promotionOptions: PromotionPieceOption[] = [
-    `${promotePieceColor ?? "w"}Q`,
+    `${promotePieceColor ?? "w"}G`,
     `${promotePieceColor ?? "w"}R`,
     `${promotePieceColor ?? "w"}N`,
     `${promotePieceColor ?? "w"}B`,
