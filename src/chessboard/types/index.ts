@@ -109,6 +109,7 @@ export type Piece =
   | "wN"
   | "wR"
   | "wM"
+  | "wU"
   | "wG"
   | "wQ"
   | "wK"
@@ -118,6 +119,7 @@ export type Piece =
   | "bR"
   | "bM"
   | "bG"
+  | "bU"
   | "bQ"
   | "bK";
 
