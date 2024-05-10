@@ -157,7 +157,7 @@ function isValidShteiFen(fen: string): boolean {
 
   // check each section
   for (let i = 0; i < 10; i++) {
-    if (chunks[i].length !== 10 || chunks[i].search(/[^kqrnmgbpKQRNBMPG1]/) !== -1) {
+    if (chunks[i].length !== 10 || chunks[i].search(/[^kqurnmgbpKQRNBMPGU1]/) !== -1) {
       return false;
     }
   }
