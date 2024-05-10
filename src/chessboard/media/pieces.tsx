@@ -105,7 +105,7 @@ export const defaultPieces: Record<string, ReactNode> = {
   </svg>
   ),
   wU: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.44 18.12">
+    <svg xmlns="http://www.w3.org/2000/svg" width={45} height={45} x="9%" y="31.5%">
     <defs>
       <style>{".cls-1{fill:#fff;fill-rule:evenodd}"}</style>
     </defs>
@@ -466,7 +466,7 @@ export const defaultPieces: Record<string, ReactNode> = {
   </svg>
   ),
   bU: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.44 18.12">
+    <svg xmlns="http://www.w3.org/2000/svg" width={45} height={45} x="9%" y="31.5%">
     <defs>
       <style>{".cls-1{fill-rule:evenodd}.cls-2{fill:#fff}"}</style>
     </defs>
