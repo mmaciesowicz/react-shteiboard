@@ -1,6 +1,6 @@
 {
   "name": "react-chessboard",
-  "version": "4.3.4",
+  "version": "4.5.0",
   "description": "The React Chessboard Library used at ChessOpenings.co.uk. Inspired and adapted from the unmaintained Chessboard.jsx.",
   "author": "Ryan Gregory <ryangregory.dev@outlook.com>",
   "repository": "https://github.com/Clariity/react-chessboard",
@@ -50,6 +50,7 @@
     "@types/react-dom": "^18.0.10",
     "babel-loader": "^8.3.0",
     "chess.js": "^0.12.0",
+    "@mdx-js/react": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.9.1",
