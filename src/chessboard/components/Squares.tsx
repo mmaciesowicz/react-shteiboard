@@ -33,6 +33,12 @@ export function Squares() {
     premoves.forEach((premove, index) => {
       const { sourceSq, targetSq, piece } = premove;
 
+      // custom - remove piece from premove if not same as boardOrientation
+      if (piece[0] !== boardOrientation[0]) {
+        premoves.splice(index,1);
+        return;
+      }
+
       // determine if the premove is made by an already premoved piece
       const relatedPremovedPiece = result.find(
         (p) =>

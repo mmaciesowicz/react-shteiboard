@@ -336,9 +336,12 @@ export const ChessboardProvider = forwardRef(
       if (
         (arePremovesAllowed && isWaitingForAnimation) ||
         (arePremovesAllowed &&
-          (lastPieceColour === piece[0] ||
+          (
+            // lastPieceColour === piece[0] ||
             premovesRef.current.filter((p: Premove) => p.piece[0] === piece[0])
-              .length > 0))
+              .length > 0)
+            && piece[0] === boardOrientation[0]
+            )
       ) {
         const oldPremoves: Premove[] = [...premovesRef.current];
 
@@ -390,11 +393,13 @@ export const ChessboardProvider = forwardRef(
       // get current value of premove as this is called in a timeout so value may have changed since timeout was set
       const premove = premovesRef.current[0];
 
+      console.log("premove.piece", premove.piece[0], "boardOrientation", boardOrientation[0]);
       // if premove is a differing colour to last move made, then this move can be made
       if (
         premove.piece[0] !== undefined &&
         premove.piece[0] !== newPieceColour &&
         onPieceDrop.length
+        && premove.piece[0] === boardOrientation[0] /* (custom) ensure the user premoves their own piece */
       ) {
         setLastPieceColour(premove.piece[0]);
         setWasManualDrop(true); // pre-move doesn't need animation

@@ -82,7 +82,8 @@ export const Chessboard = forwardRef<ClearPremoves, ChessboardProps>(
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "100vmin",
+              // width: "100vmin",
+              width: '100%'
             }}
           >
             <div ref={boardRef} style={{ width: "100%" }} />

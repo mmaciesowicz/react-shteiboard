@@ -76,7 +76,7 @@ export function Square({
         handleSetPosition(
           item.square,
           square,
-          item.piece[0] === "w" ? "wQ" : "bQ"
+          item.piece[0] === "w" ? "wG" : "bG"
         );
       } else {
         setPromoteFromSquare(item.square);
@@ -93,6 +93,7 @@ export function Square({
       const { x, y } = squareRef.current.getBoundingClientRect();
       setSquares((oldSquares) => ({ ...oldSquares, [square]: { x, y } }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [boardWidth, boardOrientation]);
 
   const defaultSquareStyle = {
